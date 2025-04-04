@@ -1,4 +1,4 @@
-const API_URL = 'https://your-backend.onrender.com/api';
+const API_URL = 'https://samos-backend.onrender.com/api';
 
 export const apiLogin = async (username, password) => {
   const response = await fetch(`${API_URL}/login`, {
