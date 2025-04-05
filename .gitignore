@@ -1,0 +1,22 @@
+# Node modullar
+node_modules/
+
+# Build fayllar
+dist/
+build/
+
+# Log fayllar
+*.log
+
+# Muhit fayllari
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel sozlamalari
+.vercel
+
+# Test ma'lumotlari
+data.json

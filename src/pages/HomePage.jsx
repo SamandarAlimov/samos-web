@@ -1,53 +1,62 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
+import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+import { ThemeContext } from '../context/ThemeContext';
 import PostCard from '../components/PostCard';
-import Footer from '../components/Footer';
-import { apiAddPost, apiGetPosts } from '../utils/api';
+import SearchBar from '../components/SearchBar';
+import LoadingSpinner from '../components/LoadingSpinner';
+import { getPosts } from '../utils/api';
 
 const HomePage = () => {
-  const [postContent, setPostContent] = useState('');
   const [posts, setPosts] = useState([]);
-  const token = localStorage.getItem('token');
-  const username = localStorage.getItem('username');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const { user, loading: authLoading } = useContext(AuthContext);
+  const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!authLoading && !user) {
+      navigate('/login');
+    }
+  }, [user, authLoading, navigate]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const posts = await apiGetPosts(token);
-      setPosts(posts);
+      try {
+        const data = await getPosts();
+        setPosts(data.posts);
+        setLoading(false);
+      } catch (err) {
+        setError(err.response?.data?.message || 'Failed to load posts');
+        setLoading(false);
+      }
     };
-    fetchPosts();
-  }, [token]);
+    if (user) {
+      fetchPosts();
+    }
+  }, [user]);
 
-  if (!token) window.location.href = '/login';
-
-  const handleAddPost = async (e) => {
-    e.preventDefault();
-    const post = await apiAddPost(postContent, username, token);
-    setPosts([post, ...posts]);
-    setPostContent('');
+  const handlePostUpdate = (updatedPost) => {
+    setPosts(posts.map((post) => (post.id === updatedPost.id ? updatedPost : post)));
   };
 
+  if (authLoading || loading) return <LoadingSpinner />;
+  if (error) return <p className="text-red-500 text-center">{error}</p>;
+
   return (
-    <div>
-      <Navbar />
-      <div className="container">
-        <form onSubmit={handleAddPost} className="fade-in" style={{ margin: '40px 0', backgroundColor: 'var(--white)', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 15px var(--shadow)' }}>
-          <textarea
-            placeholder="What's on your mind?"
-            value={postContent}
-            onChange={(e) => setPostContent(e.target.value)}
-            rows="4"
-            style={{ resize: 'none' }}
-          />
-          <button type="submit">Post</button>
-        </form>
-        <div>
-          {posts.map((post) => (
-            <PostCard key={post.id} content={post.content} username={post.username} />
-          ))}
-        </div>
+    <div className={`container mx-auto py-8 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-800'}`}>
+      <h1 className="text-3xl font-bold mb-6">Home</h1>
+      <SearchBar />
+      <div className="max-w-2xl mx-auto mt-6">
+        {posts.length === 0 ? (
+          <p className="text-gray-600 text-center">No posts yet.</p>
+        ) : (
+          posts.map((post) => (
+            <PostCard key={post.id} post={post} onUpdate={handlePostUpdate} />
+          ))
+        )}
       </div>
-      <Footer />
     </div>
   );
 };

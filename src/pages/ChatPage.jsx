@@ -1,30 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
+import React, { useContext } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+import { ThemeContext } from '../context/ThemeContext';
 import ChatWindow from '../components/ChatWindow';
 import Footer from '../components/Footer';
-import { apiGetMessages } from '../utils/api';
 
 const ChatPage = () => {
-  const token = localStorage.getItem('token');
-  const username = localStorage.getItem('username');
-  const [messages, setMessages] = useState([]);
+  const { userId } = useParams();
+  const { user, loading } = useContext(AuthContext);
+  const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchMessages = async () => {
-      const messages = await apiGetMessages(token);
-      setMessages(messages);
-    };
-    fetchMessages();
-  }, [token]);
+  if (loading) {
+    return <div className="flex justify-center items-center h-screen">Loading...</div>;
+  }
 
-  if (!token) window.location.href = '/login';
+  if (!user) {
+    navigate('/login');
+    return null;
+  }
 
   return (
-    <div>
-      <Navbar />
-      <div className="container" style={{ minHeight: '80vh' }}>
-        <ChatWindow username={username} initialMessages={messages} setMessages={setMessages} />
-      </div>
+    <div className={`flex-1 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-800'}`}>
+      <h1 className="text-3xl font-bold p-4">Chat</h1>
+      <ChatWindow receiverId={userId} />
       <Footer />
     </div>
   );

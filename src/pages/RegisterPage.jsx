@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import { ThemeContext } from '../context/ThemeContext';
-import LoginForm from '../components/LoginForm';
+import RegisterForm from '../components/RegisterForm';
 
-const LoginPage = () => {
+const RegisterPage = () => {
   const { user, loading } = useContext(AuthContext);
   const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
@@ -24,9 +24,9 @@ const LoginPage = () => {
         theme === 'dark' ? 'bg-gray-900' : 'bg-gradient-to-r from-blue-500 to-indigo-600'
       }`}
     >
-      <LoginForm />
+      <RegisterForm />
     </div>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

@@ -1,17 +1,41 @@
+/* Fade In animatsiyasi */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  0% {
+    opacity: 0;
   }
-  
-  .fade-in {
-    animation: fadeIn 0.5s ease-in;
+  100% {
+    opacity: 1;
   }
-  
-  @keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Slide In animatsiyasi */
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
   }
-  
-  .slide-up {
-    animation: slideUp 0.5s ease-out;
+  100% {
+    transform: translateX(0);
   }
+}
+
+/* Bounce animatsiyasi */
+.bounce {
+  animation: bounce 0.5s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

@@ -1,10 +1,16 @@
+/* Loyiha uchun ranglar */
 :root {
-    --primary: #4A90E2;
-    --secondary: #F5A623;
-    --background: #F9FAFB;
-    --text: #1A202C;
-    --error: #E53E3E;
-    --success: #48BB78;
-    --white: #FFFFFF;
-    --shadow: rgba(0, 0, 0, 0.1);
-  }
+  --primary: #3b82f6; /* Asosiy ko‘k */
+  --secondary: #9333ea; /* Ikkinchi darajali binafsha */
+  --accent: #f43f5e; /* Aksent qizil */
+  --background: #f3f4f6; /* Fon och kulrang */
+  --text: #1f2937; /* Matn quyuq kulrang */
+  --dark-bg: #1f2937; /* Dark mode fon */
+  --dark-text: #e5e7eb; /* Dark mode matn */
+}
+
+/* Dark mode uchun o‘zgaruvchilar */
+.dark {
+  --background: var(--dark-bg);
+  --text: var(--dark-text);
+}
