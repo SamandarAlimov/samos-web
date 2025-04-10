@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samos - Profile</title>
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div class="profile-wrapper">
+        <div class="profile-background">
+            <div class="profile-overlay"></div>
+            <div class="profile-particles">
+                <span class="profile-particle"></span>
+                <span class="profile-particle"></span>
+                <span class="profile-particle"></span>
+                <span class="profile-particle"></span>
+                <span class="profile-particle"></span>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="nav-left">
+                <img src="assets/images/logo.png" alt="Samos Logo" class="nav-logo">
+                <h1 class="nav-title">Samos</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="finance.html">Finance</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="ai.html">AI</a></li>
+                <li><button id="theme-toggle" class="theme-btn">🌙</button></li>
+                <li><button id="logout-btn" class="logout-btn">Logout</button></li>
+            </ul>
+        </nav>
+        <div class="profile-container">
+            <div class="profile-header">
+                <img src="assets/images/profile.jpg" alt="Profile" class="profile-avatar">
+                <div class="profile-info">
+                    <h2 id="profile-username">@username</h2>
+                    <h3 id="profile-fullname">Full Name</h3>
+                    <p id="profile-bio">Bu yerda qisqacha bio bo‘ladi...</p>
+                    <p id="profile-contact">Email: example@email.com</p>
+                </div>
+                <button id="edit-profile-btn" class="edit-btn">Tahrirlash</button>
+            </div>
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="posts-count">5</span>
+                    <span class="stat-label">Postlar</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="followers-count">120</span>
+                    <span class="stat-label">Followers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="following-count">85</span>
+                    <span class="stat-label">Following</span>
+                </div>
+            </div>
+            <div class="profile-posts">
+                <h3>Sizning Postlaringiz</h3>
+                <div class="posts-list" id="posts-list">
+                    <div class="post-item">
+                        <img src="assets/images/post.jpg" alt="Post" class="post-image">
+                        <p>Bu mening birinchi postim!</p>
+                        <span class="post-date">10.04.2025</span>
+                    </div>
+                    <div class="post-item">
+                        <video src="assets/images/video.mp4" controls class="post-video"></video>
+                        <p>Yangi video!</p>
+                        <span class="post-date">09.04.2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-settings" id="settings-form" style="display: none;">
+                <h3>Sozlamalar</h3>
+                <form id="edit-profile-form">
+                    <input type="text" id="edit-username" placeholder="Username" required>
+                    <input type="text" id="edit-fullname" placeholder="Full Name" required>
+                    <textarea id="edit-bio" placeholder="Bio"></textarea>
+                    <input type="email" id="edit-contact" placeholder="Email" required>
+                    <button type="submit" class="save-btn">Saqlash</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/profile.js"></script>
+</body>
+</html>

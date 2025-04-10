@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samos - Education</title>
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/education.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div class="edu-wrapper">
+        <div class="edu-background">
+            <div class="edu-overlay"></div>
+            <div class="edu-particles">
+                <span class="edu-particle"></span>
+                <span class="edu-particle"></span>
+                <span class="edu-particle"></span>
+                <span class="edu-particle"></span>
+                <span class="edu-particle"></span>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="nav-left">
+                <img src="assets/images/logo.png" alt="Samos Logo" class="nav-logo">
+                <h1 class="nav-title">Samos</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="education.html" class="active">Education</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="finance.html">Finance</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="ai.html">AI</a></li>
+                <li><button id="logout-btn" class="logout-btn">Logout</button></li>
+            </ul>
+        </nav>
+        <div class="edu-container">
+            <div class="edu-header">
+                <h2 class="edu-title">Ta'lim Bo‘limi</h2>
+                <p class="edu-subtitle">O‘zingizni rivojlantiring — kurslar, videolar va testlar bilan bilim oling!</p>
+            </div>
+            <div class="edu-progress">
+                <h3>Sizning Progressingiz</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <p id="progress-text">0% bajarildi</p>
+            </div>
+            <div class="edu-courses">
+                <h3>Kurslar</h3>
+                <div class="course-list" id="course-list">
+                    <div class="course-item quran-card">
+                        <h4>Qur'on</h4>
+                        <p>Qur'on matnlari va audio tinglash imkoniyati bilan tanishing.</p>
+                        <a href="quran.html" class="course-btn">Boshlash</a>
+                        <span class="course-status">Boshlanmagan</span>
+                    </div>
+                    <div class="course-item">
+                        <h4>Web Dasturlash Asoslari</h4>
+                        <p>HTML, CSS va JavaScript bilan veb-saytlar yarating.</p>
+                        <button class="course-btn" data-course="web">Boshlash</button>
+                        <span class="course-status">Boshlanmagan</span>
+                    </div>
+                    <div class="course-item">
+                        <h4>Ma'lumotlar Tahlili</h4>
+                        <p>Python va Excel bilan ma'lumotlarni tahlil qiling.</p>
+                        <button class="course-btn" data-course="data">Boshlash</button>
+                        <span class="course-status">Boshlanmagan</span>
+                    </div>
+                    <div class="course-item">
+                        <h4>Dizayn Asoslari</h4>
+                        <p>Figma va Adobe XD bilan UI/UX dizaynni o‘rganing.</p>
+                        <button class="course-btn" data-course="design">Boshlash</button>
+                        <span class="course-status">Boshlanmagan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="edu-videos">
+                <h3>O‘quv Videolar</h3>
+                <div class="video-list" id="video-list">
+                    <div class="video-item">
+                        <video src="assets/images/video.mp4" controls class="video-player"></video>
+                        <p>Web Dasturlashga Kirish</p>
+                    </div>
+                    <div class="video-item">
+                        <video src="assets/images/video.mp4" controls class="video-player"></video>
+                        <p>Python bilan Birinchi Dastur</p>
+                    </div>
+                </div>
+            </div>
+            <div class="edu-quiz">
+                <h3>Bilimni Sinash</h3>
+                <div class="quiz-container">
+                    <p id="quiz-question">Savol: HTML nimani anglatadi?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" data-answer="wrong">Hyper Text Main Language</button>
+                        <button class="quiz-btn" data-answer="correct">Hyper Text Markup Language</button>
+                        <button class="quiz-btn" data-answer="wrong">High Tech Modern Language</button>
+                    </div>
+                    <p id="quiz-result"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/education.js"></script>
+</body>
+</html>

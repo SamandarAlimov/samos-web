@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samos - Welcome</title>
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-background">
+            <div class="gradient-overlay"></div>
+            <div class="wave-layer wave-1"></div>
+            <div class="wave-layer wave-2"></div>
+            <div class="particle-container">
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+            </div>
+        </div>
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="logo-container">
+                    <img src="assets/images/logo.png" alt="Samos Logo" class="logo">
+                    <h1 class="brand-title">Samos</h1>
+                </div>
+                <div class="form-header">
+                    <h2 id="auth-title" class="auth-title">Login</h2>
+                    <p id="auth-subtitle" class="auth-subtitle">Welcome back! Let's get started.</p>
+                </div>
+                <form id="auth-form" class="auth-form">
+                    <div id="login-fields" class="form-fields">
+                        <div class="input-wrapper">
+                            <label for="email" class="input-label">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required class="input-field">
+                            <span class="input-icon">✉️</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="password" class="input-label">Password</label>
+                            <input type="password" id="password" placeholder="Enter your password" required class="input-field">
+                            <span class="input-icon">🔒</span>
+                        </div>
+                    </div>
+                    <div id="register-fields" class="form-fields" style="display: none;">
+                        <div class="input-wrapper">
+                            <label for="reg-fullname" class="input-label">Full Name</label>
+                            <input type="text" id="reg-fullname" placeholder="Enter your full name" required class="input-field">
+                            <span class="input-icon">👤</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="reg-email" class="input-label">Email Address</label>
+                            <input type="email" id="reg-email" placeholder="Enter your email" required class="input-field">
+                            <span class="input-icon">✉️</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="reg-password" class="input-label">Password</label>
+                            <input type="password" id="reg-password" placeholder="Enter your password" required class="input-field">
+                            <span class="input-icon">🔒</span>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="reg-confirm-password" class="input-label">Confirm Password</label>
+                            <input type="password" id="reg-confirm-password" placeholder="Confirm your password" required class="input-field">
+                            <span class="input-icon">🔑</span>
+                        </div>
+                    </div>
+                    <button type="submit" id="auth-btn" class="auth-button">Login</button>
+                </form>
+                <div class="auth-footer">
+                    <p id="auth-switch" class="switch-text">
+                        Don't have an account? <a href="#" id="toggle-auth" class="switch-link">Register</a>
+                    </p>
+                    <div id="error-message" class="error-message" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

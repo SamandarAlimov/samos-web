@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samos Web - Home</title>
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div class="home-wrapper">
+        <nav class="navbar">
+            <div class="nav-left">
+                <img src="assets/images/logo.png" alt="Samos Logo" class="nav-logo">
+                <h1 class="nav-title">Samos</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="finance.html">Finance</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="ai.html">AI</a></li>
+                <li><button id="logout-btn" class="logout-btn">Logout</button></li>
+            </ul>
+        </nav>
+        <div class="home-container">
+            <div class="stories-section">
+                <div class="stories-slider" id="stories-slider">
+                    <div class="story-item"><img src="assets/images/profile.jpg" alt="User1"><span>User1</span></div>
+                    <div class="story-item"><img src="assets/images/profile.jpg" alt="User2"><span>User2</span></div>
+                    <div class="story-item"><img src="assets/images/profile.jpg" alt="User3"><span>User3</span></div>
+                    <div class="story-item"><img src="assets/images/profile.jpg" alt="User4"><span>User4</span></div>
+                    <div class="story-item"><img src="assets/images/profile.jpg" alt="User5"><span>User5</span></div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="post-create">
+                    <textarea id="post-content" placeholder="What's on your mind?"></textarea>
+                    <input type="file" id="post-media" accept="image/*,video/*">
+                    <button id="post-btn" class="post-btn">Post</button>
+                </div>
+                <div class="posts-feed" id="posts-feed">
+                    <!-- Twitter Style Text Post -->
+                    <div class="post twitter-style">
+                        <div class="post-header">
+                            <img src="assets/images/profile.jpg" alt="User1" class="post-avatar">
+                            <div class="post-user">
+                                <span class="username">User1</span>
+                                <span class="handle">@user1 · 2h</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>Just saw an amazing sunset today!</p>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like">❤️ 12</button>
+                            <button class="action-btn comment">💬 3</button>
+                            <button class="action-btn repost">🔄 5</button>
+                            <button class="action-btn share">📤</button>
+                        </div>
+                    </div>
+                    <!-- Video + Text Post -->
+                    <div class="post video-post">
+                        <div class="post-header">
+                            <img src="assets/images/profile.jpg" alt="User2" class="post-avatar">
+                            <div class="post-user">
+                                <span class="username">User2</span>
+                                <span class="handle">@user2 · 1d</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>Check out this cool video I found!</p>
+                            <video controls src="assets/images/video.mp4" class="post-media"></video>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like">❤️ 45</button>
+                            <button class="action-btn comment">💬 10</button>
+                            <button class="action-btn repost">🔄 8</button>
+                            <button class="action-btn share">📤</button>
+                        </div>
+                    </div>
+                    <!-- Image + Text Post -->
+                    <div class="post image-post">
+                        <div class="post-header">
+                            <img src="assets/images/profile.jpg" alt="User3" class="post-avatar">
+                            <div class="post-user">
+                                <span class="username">User3</span>
+                                <span class="handle">@user3 · 3h</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>My latest artwork!</p>
+                            <img src="assets/images/post.jpg" alt="Artwork" class="post-media">
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like">❤️ 28</button>
+                            <button class="action-btn comment">💬 7</button>
+                            <button class="action-btn repost">🔄 4</button>
+                            <button class="action-btn share">📤</button>
+                        </div>
+                    </div>
+                    <!-- Quote Post -->
+                    <div class="post quote-post">
+                        <div class="post-header">
+                            <img src="assets/images/profile.jpg" alt="User4" class="post-avatar">
+                            <div class="post-user">
+                                <span class="username">User4</span>
+                                <span class="handle">@user4 · 5h</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <blockquote>"The only way to do great work is to love what you do." - Steve Jobs</blockquote>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like">❤️ 15</button>
+                            <button class="action-btn comment">💬 2</button>
+                            <button class="action-btn repost">🔄 6</button>
+                            <button class="action-btn share">📤</button>
+                        </div>
+                    </div>
+                    <!-- Large Video Post (YouTube Style) -->
+                    <div class="post large-video-post">
+                        <div class="post-header">
+                            <img src="assets/images/profile.jpg" alt="User5" class="post-avatar">
+                            <div class="post-user">
+                                <span class="username">User5</span>
+                                <span class="handle">@user5 · 1d</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>My latest vlog - Exploring the city!</p>
+                            <video controls src="assets/images/video.mp4" class="large-video"></video>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like">❤️ 82</button>
+                            <button class="action-btn comment">💬 25</button>
+                            <button class="action-btn repost">🔄 15</button>
+                            <button class="action-btn share">📤</button>
+                        </div>
+                    </div>
+                    <!-- Loyalty Program Post -->
+                    <div class="post loyalty-post">
+                        <div class="post-header">
+                            <img src="assets/images/profile.jpg" alt="SamosTeam" class="post-avatar">
+                            <div class="post-user">
+                                <span class="username">SamosTeam</span>
+                                <span class="handle">@samos_official · 2d</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>Join our Loyalty Program! Earn points for every post and redeem exclusive rewards!</p>
+                            <button class="join-btn">Join Now</button>
+                        </div>
+                        <div class="post-actions">
+                            <button class="action-btn like">❤️ 50</button>
+                            <button class="action-btn comment">💬 12</button>
+                            <button class="action-btn repost">🔄 20</button>
+                            <button class="action-btn share">📤</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reels-sidebar">
+                <h3 class="reels-title">Recommended Reels</h3>
+                <div class="reels-list" id="reels-list">
+                    <div class="reel-item">
+                        <video src="assets/images/video.mp4" class="reel-video" muted></video>
+                        <div class="reel-info">
+                            <p>User2 · Cool Trick</p>
+                            <span>❤️ 35</span>
+                        </div>
+                    </div>
+                    <div class="reel-item">
+                        <video src="assets/images/video.mp4" class="reel-video" muted></video>
+                        <div class="reel-info">
+                            <p>User3 · Dance Move</p>
+                            <span>❤️ 22</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/home.js"></script>
+</body>
+</html>

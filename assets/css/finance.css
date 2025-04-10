@@ -1,0 +1,233 @@
+.finance-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007AFF, #00C4B4, #8A2BE2);
+    padding-top: 80px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.finance-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: gradientShift 15s infinite ease-in-out;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.finance-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.finance-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.finance-particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: particleFloat 12s infinite ease-in-out;
+}
+
+.finance-particle:nth-child(1) { top: 15%; left: 25%; width: 15px; height: 15px; animation-delay: 0s; }
+.finance-particle:nth-child(2) { top: 35%; left: 65%; width: 20px; height: 20px; animation-delay: 2s; }
+.finance-particle:nth-child(3) { top: 55%; left: 15%; width: 10px; height: 10px; animation-delay: 4s; }
+.finance-particle:nth-child(4) { top: 75%; left: 85%; width: 25px; height: 25px; animation-delay: 6s; }
+.finance-particle:nth-child(5) { top: 25%; left: 45%; width: 18px; height: 18px; animation-delay: 1s; }
+
+@keyframes particleFloat {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+    50% { transform: translateY(-60px) scale(1.3); opacity: 0.3; }
+}
+
+.finance-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+.finance-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.finance-title {
+    font-size: 40px;
+    color: #007AFF;
+    font-weight: 800;
+    text-shadow: 0 2px 5px rgba(0, 122, 255, 0.3);
+    background: linear-gradient(90deg, #007AFF, #00C4B4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.finance-subtitle {
+    font-size: 18px;
+    color: #6B7280;
+    margin-top: 10px;
+}
+
+.finance-balance {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.finance-balance h3 {
+    font-size: 24px;
+    color: #1C2526;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#balance-amount {
+    font-size: 36px;
+    color: #00C4B4;
+    font-weight: 800;
+    text-shadow: 0 2px 5px rgba(0, 196, 180, 0.3);
+}
+
+.finance-cards h3,
+.finance-transfers h3,
+.finance-savings h3 {
+    font-size: 24px;
+    color: #1C2526;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.card-list,
+.transfer-list,
+.savings-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card-item,
+.transfer-item,
+.savings-item {
+    background: rgba(245, 245, 245, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-item:hover,
+.transfer-item:hover,
+.savings-item:hover {
+    transform: translateY(-5px);
+}
+
+.card-name,
+.transfer-desc,
+.savings-name {
+    font-size: 18px;
+    color: #007AFF;
+    font-weight: 600;
+}
+
+.card-number,
+.transfer-amount,
+.savings-amount {
+    font-size: 16px;
+    color: #1C2526;
+}
+
+.card-balance,
+.transfer-date,
+.savings-profit,
+.savings-date {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.transfer-amount {
+    color: #FF2D55;
+}
+
+.card-btn,
+.transfer-btn,
+.savings-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #007AFF, #00C4B4);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.card-btn:hover,
+.transfer-btn:hover,
+.savings-btn:hover {
+    background: linear-gradient(135deg, #005BB5, #008B8B);
+}
+
+.add-btn {
+    padding: 10px 20px;
+    background: #007AFF;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.add-btn:hover {
+    background: #005BB5;
+}
+
+.transfer-form,
+.savings-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.transfer-form input,
+.savings-form input {
+    padding: 12px;
+    border-radius: 8px;
+    background: #F5F5F5;
+    font-size: 16px;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.transfer-form input:focus,
+.savings-form input:focus {
+    background: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 122, 255, 0.3);
+}

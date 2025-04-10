@@ -1,0 +1,188 @@
+/* Planshet (768px gacha) */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .navbar .nav-links li {
+        flex: 1 1 45%;
+        text-align: center;
+    }
+
+    .ai-container, .edu-container, .chat-container, .finance-container, .profile-container, .home-container {
+        margin: 10px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .card-list, .transfer-list, .savings-list, .posts-list, .course-list, .video-list {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-height: 30vh;
+        overflow-y: auto;
+    }
+
+    .chat-main {
+        height: 70vh;
+    }
+
+    .chat-messages {
+        max-height: 50vh;
+    }
+
+    .finance-balance p {
+        font-size: 28px;
+    }
+
+    .transfer-form, .savings-form {
+        flex-direction: column;
+    }
+
+    .ai-title, .edu-title, .finance-title, .profile-title {
+        font-size: 32px;
+    }
+
+    .ai-subtitle, .edu-subtitle, .finance-subtitle {
+        font-size: 16px;
+    }
+}
+
+/* Telefon (480px gacha) */
+@media (max-width: 480px) {
+    .navbar .nav-left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-logo {
+        width: 40px;
+    }
+
+    .nav-title {
+        font-size: 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links li {
+        flex: 1 1 100%;
+    }
+
+    .ai-container, .edu-container, .chat-container, .finance-container, .profile-container, .home-container {
+        margin: 5px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    #profile-username {
+        font-size: 24px;
+    }
+
+    #profile-fullname {
+        font-size: 20px;
+    }
+
+    #profile-bio, #profile-contact {
+        font-size: 14px;
+    }
+
+    .stat-number {
+        font-size: 20px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+    }
+
+    .chat-item {
+        padding: 8px;
+    }
+
+    .chat-avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+    .chat-name {
+        font-size: 14px;
+    }
+
+    .chat-preview {
+        font-size: 12px;
+    }
+
+    .message {
+        max-width: 85%;
+        padding: 8px 12px;
+    }
+
+    .finance-balance p {
+        font-size: 24px;
+    }
+
+    .card-item, .transfer-item, .savings-item, .post-item, .course-item {
+        padding: 15px;
+    }
+
+    .card-name, .transfer-desc, .savings-name {
+        font-size: 16px;
+    }
+
+    .card-number, .transfer-amount, .savings-amount {
+        font-size: 14px;
+    }
+
+    .card-balance, .transfer-date, .savings-profit, .savings-date {
+        font-size: 12px;
+    }
+
+    .ai-title, .edu-title, .finance-title, .profile-title {
+        font-size: 28px;
+    }
+
+    .ai-subtitle, .edu-subtitle, .finance-subtitle {
+        font-size: 14px;
+    }
+
+    button, input, textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .edit-btn, .save-btn, .card-btn, .transfer-btn, .savings-btn, .add-btn {
+        padding: 8px 15px;
+    }
+}
