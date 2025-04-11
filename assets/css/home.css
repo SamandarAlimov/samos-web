@@ -1,9 +1,11 @@
+/* Umumiy wrapper */
 .home-wrapper {
     min-height: 100vh;
     background: linear-gradient(135deg, #f0f2f5, #e5e7eb);
-    padding-top: 80px;
+    padding-top: 80px; /* Navbar uchun joy */
 }
 
+/* Asosiy konteyner */
 .home-container {
     display: flex;
     max-width: 1400px;
@@ -12,6 +14,7 @@
     gap: 30px;
 }
 
+/* Stories qismi */
 .stories-section {
     padding: 20px 0;
     background: rgba(255, 255, 255, 0.9);
@@ -25,11 +28,11 @@
     gap: 15px;
     overflow-x: auto;
     padding: 10px;
-    scrollbar-width: none;
+    scrollbar-width: none; /* Firefox uchun */
 }
 
 .stories-slider::-webkit-scrollbar {
-    display: none;
+    display: none; /* Chrome/Safari uchun */
 }
 
 .story-item {
@@ -57,8 +60,10 @@
     margin-top: 5px;
 }
 
-.main-content {
+/* Postlar qismi */
+.posts-section {
     flex: 2;
+    max-width: 800px; /* Postlar cho‘zilib ketmasligi uchun */
 }
 
 .post-create {
@@ -79,11 +84,13 @@
     height: 100px;
     margin-bottom: 15px;
     transition: all 0.3s ease;
+    border: none;
 }
 
 .post-create textarea:focus {
     background: #FFFFFF;
     box-shadow: 0 0 10px rgba(0, 122, 255, 0.3);
+    outline: none;
 }
 
 .post-create input[type="file"] {
@@ -98,6 +105,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: none;
 }
 
 .post-btn:hover {
@@ -117,6 +125,8 @@
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    width: 100%; /* Cho‘zilib ketmasligi uchun */
+    box-sizing: border-box; /* Padding ichida qolsin */
 }
 
 .post:hover {
@@ -163,6 +173,7 @@
     max-width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
+    object-fit: cover;
 }
 
 .large-video {
@@ -189,6 +200,8 @@ blockquote {
     font-weight: 600;
     margin-top: 10px;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .join-btn:hover {
@@ -207,14 +220,17 @@ blockquote {
     font-size: 14px;
     cursor: pointer;
     transition: color 0.3s ease;
+    border: none;
 }
 
 .action-btn:hover {
     color: #007AFF;
 }
 
-.reels-sidebar {
+/* Recommended Reels qismi */
+.reels-section {
     flex: 1;
+    max-width: 400px; /* Reels cho‘zilib ketmasligi uchun */
     padding: 20px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
@@ -259,4 +275,98 @@ blockquote {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 13px;
+}
+
+/* Responsive dizayn */
+@media (max-width: 1024px) {
+    .home-container {
+        flex-direction: column;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .posts-section, .reels-section {
+        max-width: 100%; /* Tablet va kichik ekranlar uchun to‘liq kenglik */
+    }
+
+    .reels-section {
+        margin-top: 20px; /* Postlardan keyin joy */
+    }
+}
+
+@media (max-width: 768px) {
+    .home-wrapper {
+        padding-top: 60px; /* Navbar kichikroq bo‘lsa */
+    }
+
+    .stories-slider {
+        gap: 10px;
+    }
+
+    .story-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .post-create {
+        padding: 15px;
+    }
+
+    .post-btn {
+        padding: 10px 20px;
+    }
+
+    .reel-video {
+        height: 150px; /* Mobil uchun kichikroq */
+    }
+}
+
+@media (max-width: 480px) {
+    .stories-section {
+        padding: 15px 0;
+    }
+
+    .story-item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .story-item span {
+        font-size: 12px;
+    }
+
+    .post-create textarea {
+        height: 80px;
+        font-size: 14px;
+    }
+
+    .post-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .post {
+        padding: 15px;
+    }
+
+    .post-avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+    .username {
+        font-size: 14px;
+    }
+
+    .handle {
+        font-size: 12px;
+    }
+
+    .post-content p {
+        font-size: 14px;
+    }
+
+    .reel-video {
+        height: 120px; /* Juda kichik ekranlar uchun */
+    }
 }

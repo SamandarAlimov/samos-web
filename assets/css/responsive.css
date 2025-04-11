@@ -1,17 +1,151 @@
 /* Planshet (768px gacha) */
 @media (max-width: 768px) {
-    .navbar ul {
-        flex-wrap: wrap;
-        gap: 10px;
+    /* Navbar */
+    .navbar {
         padding: 10px;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .nav-left {
+        margin-bottom: 0; /* Margin olib tashlandi, chunki toggle tugmasi bilan moslashadi */
+    }
+
+    .menu-toggle {
+        display: block; /* Planshetda ko‘rinadi */
+    }
+
+    .nav-links {
+        display: none; /* Dastlab yashirin */
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+        background: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex; /* Tugma bosilganda ko‘rinadi */
     }
 
     .navbar .nav-links li {
-        flex: 1 1 45%;
+        flex: 1 1 100%;
         text-align: center;
     }
 
-    .ai-container, .edu-container, .chat-container, .finance-container, .profile-container, .home-container {
+    .logout-btn {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* Qolgan qismlar (Home, Chat, Umumiy) o‘zgarmaydi */
+    .home-wrapper {
+        padding: 10px;
+    }
+
+    .home-container {
+        flex-direction: column;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .stories-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .stories-slider {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+    }
+
+    .story-item {
+        flex: 0 0 80px;
+    }
+
+    .main-content {
+        width: 100%;
+        margin: 0;
+    }
+
+    .post-create {
+        padding: 10px;
+    }
+
+    .posts-feed {
+        width: 100%;
+    }
+
+    .post {
+        margin: 10px 0;
+    }
+
+    .post-media, .large-video {
+        width: 100%;
+        height: auto;
+    }
+
+    .reels-sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .reels-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .reel-item {
+        width: 100%;
+    }
+
+    .reel-video {
+        width: 100%;
+        height: auto;
+    }
+
+    .chat-wrapper {
+        padding: 10px;
+    }
+
+    .chat-container {
+        flex-direction: column;
+        height: auto;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-height: 30vh;
+        overflow-y: auto;
+        margin-bottom: 10px;
+    }
+
+    .chat-main {
+        width: 100%;
+        height: 60vh;
+    }
+
+    .chat-messages {
+        max-height: 45vh;
+        overflow-y: auto;
+    }
+
+    .chat-input {
+        padding: 10px;
+    }
+
+    .ai-container, .edu-container, .finance-container, .profile-container {
         margin: 10px;
         padding: 15px;
         border-radius: 15px;
@@ -35,48 +169,18 @@
     .card-list, .transfer-list, .savings-list, .posts-list, .course-list, .video-list {
         grid-template-columns: 1fr;
     }
-
-    .chat-container {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .sidebar {
-        width: 100%;
-        max-height: 30vh;
-        overflow-y: auto;
-    }
-
-    .chat-main {
-        height: 70vh;
-    }
-
-    .chat-messages {
-        max-height: 50vh;
-    }
-
-    .finance-balance p {
-        font-size: 28px;
-    }
-
-    .transfer-form, .savings-form {
-        flex-direction: column;
-    }
-
-    .ai-title, .edu-title, .finance-title, .profile-title {
-        font-size: 32px;
-    }
-
-    .ai-subtitle, .edu-subtitle, .finance-subtitle {
-        font-size: 16px;
-    }
 }
 
 /* Telefon (480px gacha) */
 @media (max-width: 480px) {
-    .navbar .nav-left {
-        flex-direction: column;
-        align-items: center;
+    /* Navbar */
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-left {
+        flex-direction: row; /* Logotip va sarlavha yonma-yon qoladi */
+        gap: 10px;
     }
 
     .nav-logo {
@@ -87,16 +191,157 @@
         font-size: 20px;
     }
 
-    .navbar ul {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
         flex-direction: column;
         align-items: center;
+        background: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
     }
 
     .navbar .nav-links li {
         flex: 1 1 100%;
     }
 
-    .ai-container, .edu-container, .chat-container, .finance-container, .profile-container, .home-container {
+    .logout-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+        width: 80%;
+    }
+
+    /* Qolgan qismlar (Home, Chat, Umumiy) */
+    .home-container {
+        margin: 5px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .story-item {
+        flex: 0 0 60px;
+    }
+
+    .story-item img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .story-item span {
+        font-size: 12px;
+    }
+
+    .post-create textarea {
+        height: 80px;
+    }
+
+    .post-btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .post-avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+    .username {
+        font-size: 14px;
+    }
+
+    .handle {
+        font-size: 12px;
+    }
+
+    .post-content p {
+        font-size: 14px;
+    }
+
+    .action-btn {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .reels-title {
+        font-size: 18px;
+    }
+
+    .reel-info p {
+        font-size: 12px;
+    }
+
+    .reel-info span {
+        font-size: 12px;
+    }
+
+    .chat-container {
+        margin: 5px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .sidebar {
+        max-height: 25vh;
+    }
+
+    .chat-main {
+        height: 65vh;
+    }
+
+    .chat-header h3 {
+        font-size: 18px;
+    }
+
+    .chat-messages {
+        max-height: 50vh;
+    }
+
+    .chat-item {
+        padding: 8px;
+    }
+
+    .chat-avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+    .chat-name {
+        font-size: 14px;
+    }
+
+    .chat-preview {
+        font-size: 12px;
+    }
+
+    .message {
+        max-width: 85%;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .chat-input textarea {
+        height: 60px;
+        font-size: 14px;
+    }
+
+    .send-btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .ai-container, .edu-container, .finance-container, .profile-container {
         margin: 5px;
         padding: 10px;
         border-radius: 10px;
@@ -125,48 +370,6 @@
 
     .stat-label {
         font-size: 14px;
-    }
-
-    .chat-item {
-        padding: 8px;
-    }
-
-    .chat-avatar {
-        width: 30px;
-        height: 30px;
-    }
-
-    .chat-name {
-        font-size: 14px;
-    }
-
-    .chat-preview {
-        font-size: 12px;
-    }
-
-    .message {
-        max-width: 85%;
-        padding: 8px 12px;
-    }
-
-    .finance-balance p {
-        font-size: 24px;
-    }
-
-    .card-item, .transfer-item, .savings-item, .post-item, .course-item {
-        padding: 15px;
-    }
-
-    .card-name, .transfer-desc, .savings-name {
-        font-size: 16px;
-    }
-
-    .card-number, .transfer-amount, .savings-amount {
-        font-size: 14px;
-    }
-
-    .card-balance, .transfer-date, .savings-profit, .savings-date {
-        font-size: 12px;
     }
 
     .ai-title, .edu-title, .finance-title, .profile-title {
